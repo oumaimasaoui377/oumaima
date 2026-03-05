@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLoc - Premium Car Rental</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-car-side"></i>
+                <span>AutoLoc</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#fleet">Our Fleet</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Premium Car Rental Experience</h1>
+            <p>Discover the perfect vehicle for your journey. Premium cars, unbeatable prices, exceptional service.</p>
+            <div class="hero-buttons">
+                <a href="#fleet" class="btn btn-primary">Browse Fleet</a>
+                <a href="#contact" class="btn btn-secondary">Book Now</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Cars</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Customers</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Locations</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-box">
+            <h2>Find Your Perfect Car</h2>
+            <form id="searchForm">
+                <div class="search-fields">
+                    <div class="field">
+                        <label><i class="fas fa-map-marker-alt"></i> Pick-up Location</label>
+                        <input type="text" placeholder="Enter city or airport" required>
+                    </div>
+                    <div class="field">
+                        <label><i class="fas fa-calendar"></i> Pick-up Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="field">
+                        <label><i class="fas fa-calendar"></i> Return Date</label>
+                        <input type="date" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search Cars</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="fleet" class="fleet-section">
+        <div class="section-header">
+            <h2>Our Fleet</h2>
+            <p>Choose from our wide selection of premium vehicles</p>
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">All Cars</button>
+            <button class="filter-btn" data-category="sedan">Sedan</button>
+            <button class="filter-btn" data-category="suv">SUV</button>
+            <button class="filter-btn" data-category="sports">Sports</button>
+            <button class="filter-btn" data-category="luxury">Luxury</button>
+        </div>
+
+        <div class="cars-grid" id="carsGrid">
+            <!-- Cars will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="section-header">
+            <h2>Why Choose Us</h2>
+            <p>Premium services for premium customers</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Fully Insured</h3>
+                <p>All our vehicles come with comprehensive insurance coverage for your peace of mind.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-clock"></i>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock customer support wherever you are, whenever you need us.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-road"></i>
+                <h3>Unlimited Mileage</h3>
+                <p>Drive as much as you want with our unlimited mileage packages.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tags"></i>
+                <h3>Best Prices</h3>
+                <p>Competitive pricing with no hidden fees. What you see is what you pay.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Book Your Car</h2>
+            <form id="bookingForm">
+                <input type="hidden" id="selectedCar">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" placeholder="Enter your phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Pick-up Date</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Return Date</label>
+                    <input type="date" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our team</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Car Street, Auto City</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+1 234 567 890</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@autoloc.com</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AutoLoc</h3>
+                <p>Premium car rental services for discerning customers.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#fleet">Fleet</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe for exclusive offers</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AutoLoc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
